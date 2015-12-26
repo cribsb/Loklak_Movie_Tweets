@@ -31,13 +31,15 @@ public class Main extends JFrame{
         tweetPanel.setLayout(layout);
 
         String status;
+        String user;
 
         int len = search.getJSONArray("statuses").length();
         for(int i = 0; i < len; i++) {
             try {
                 status = search.getJSONArray("statuses").getJSONObject(i).getString("text");
+                user = search.getJSONArray("statuses").getJSONObject(i).getString("screen_name");
                 if (status != null) {
-                    tweetLabels[i] = new JLabel("<html><body style='width: 550px;'>" + status + "</body></html>");
+                    tweetLabels[i] = new JLabel("<html><body style='width: 550px;'><h3>" + user + " tweeted: </h3><br>" + status + "</body></html>");
                     tweetPanel.add(tweetLabels[i]);
                 }
             } catch(org.json.JSONException e) {
