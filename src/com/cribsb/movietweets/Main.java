@@ -54,7 +54,7 @@ public class Main extends JFrame{
 
     public String getJSON() {
         try {
-            connection = (HttpURLConnection) new URL("http://localhost:9000/api/search.json?timezoneOffset=-60&q=star+wars&count=100").openConnection();
+            connection = (HttpURLConnection) new URL("http://loklak.org/api/search.json?timezoneOffset=-60&q=star+wars&count=100").openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
             String input;
